@@ -147,3 +147,20 @@ button:hover, .connect-button:hover {
         font-size: 1em;
     }
 }
+.form-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-column input, .form-column button {
+    width: 100%;
+    max-width: 400px;
+    margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+    .form-column input, .form-column button {
+        width: 90%;
+    }
+}
