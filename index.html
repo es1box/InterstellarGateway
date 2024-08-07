@@ -3,24 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GMod Server - Главная</title>
+    <title>InterstellarGateway - Главная</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="news.html">Новости</a></li>
-                <li><a href="auth.html">Вход/Регистрация</a></li>
-                <li><a href="profile.html">Профиль</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h1>Последние новости</h1>
-        <div id="news-list"></div>
-    </main>
-    <script type="module" src="main.js"></script>
+    <div class="particles">
+        <canvas id="particles-canvas"></canvas>
+    </div>
+    <div class="container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="auth.html">Вход/Регистрация</a></li>
+                    <li><a href="profile.html">Профиль</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1>Добро пожаловать на сервер GMod</h1>
+            <h2>Interstellar Gateway</h2>
+            <p>Здесь начинается ваше космическое приключение!</p>
+            <a href="steam://connect/YOUR_SERVER_IP" class="connect-button">Подключиться</a>
+        </main>
+    </div>
+    <script type="module" src="particles.js"></script>
 </body>
 </html>
