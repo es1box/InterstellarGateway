@@ -3,47 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InterstellarGateway - Главная</title>
+    <title>Interstellar Gateway</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <div class="header-content">
-            <h1>InterstellarGateway</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Главная</a></li>
-                    <li><a href="news.html">Новости</a></li>
-                    <li><a href="login.html">Вход</a></li>
-                    <li><a href="register.html">Регистрация</a></li>
-                </ul>
-            </nav>
-        </div>
+        <div class="logo">InterstellarGateway</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="news.html">Новости</a></li>
+                <li><a href="login.html">Вход</a></li>
+                <li><a href="register.html">Регистрация</a></li>
+            </ul>
+        </nav>
     </header>
     
     <main>
         <section class="banner">
-            <a href="http://www.myarena.ru/game-monitoring.html?game=88653">
-                <img src="//img.myarena.ru/88653/560.png" alt="Monitoring Banner">
-            </a>
-            <button class="connect-button" onclick="connectToServer()">Подключиться</button>
+            <img src="//img.myarena.ru/88653/560.png" alt="Server Banner">
+            <button class="connect-btn">Подключиться</button>
         </section>
-        
-        <section class="content">
-            <h2>InterstellarGateway</h2>
-            <h3>Список серверов</h3>
-            <p>1. IG|Galactic Conflict</p>
+        <section class="servers">
+            <h2>Список серверов</h2>
+            <div class="server">
+                <h3>1. IG|Galactic Conflict</h3>
+            </div>
         </section>
     </main>
     
     <footer>
-        <p>© 2024 @IG|Galactic Conflic. Все права защищены. <a href="politic.html">Политика конфиденциальности</a></p>
+        <p>© 2024 @Interstellar Gateway. Все права защищены. <a href="palitic.html">Политика конфиденциальности</a></p>
     </footer>
-
-    <script>
-        function connectToServer() {
-            window.location.href = 'steam://connect/46.174.50.56:27015';
-        }
-    </script>
 </body>
 </html>
