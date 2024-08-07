@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="particles">
+        <canvas id="particles-canvas"></canvas>
+    </div>
+    <div class="container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="auth.html">Вход/Регистрация</a></li>
+                    <li><a href="profile.html">Профиль</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1>Регистрация</h1>
+            <form id="registerForm">
+                <input type="text" id="nickname" placeholder="Игровой ник" required>
+                <input type="email" id="email" placeholder="Почта" required>
+                <input type="password" id="password" placeholder="Пароль" required>
+                <input type="number" id="age" placeholder="Возраст" required>
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+        </main>
+    </div>
+    <script type="module" src="main.js"></script>
+    <script type="module" src="particles.js"></script>
+</body>
+</html>
