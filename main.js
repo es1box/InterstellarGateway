@@ -70,3 +70,42 @@ if (registerLink) {
         window.location.href = "register.html";
     });
 }
+// User Profile
+const userInfo = document.getElementById("user-info");
+const logoutButton = document.getElementById("logout");
+
+auth.onAuthStateChanged((user) => {
+    if (user) {
+        // User is signed in
+        const userDoc = doc(db, "users", user.uid);
+        userInfo.innerHTML = `
+            <p><strong>Почта:</strong> ${user.email}</p>
+            <p><strong>Никнейм:</strong> ${user.displayName || "Не указан"}</p>
+            <p><strong>Возраст:</strong> ${user.age || "Не указан"}</p>
+        `;
+
+        // Check if user is admin
+        if (user.isAdmin) {
+            userInfo.innerHTML += `
+                <p><strong>Роль:</strong> Администратор</p>
+                <a href="admin.html" class="connect-button">Панель администратора</a>
+            `;
+        } else {
+            userInfo.innerHTML += `<p><strong>Роль:</strong> Пользователь</p>`;
+        }
+    } else {
+        // No user is signed in
+        window.location.href = "auth.html";
+    }
+});
+
+if (logoutButton) {
+    logoutButton.addEventListener("click", async () => {
+        try {
+            await auth.signOut();
+            window.location.href = "index.html";
+        } catch (error) {
+            console.error("Ошибка при выходе:", error);
+        }
+    });
+}
