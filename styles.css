@@ -5,228 +5,226 @@ body, html {
     font-family: 'Roboto', sans-serif;
     background-color: #1a1a1a;
     color: #ffffff;
-    overflow: hidden;
+   
+overflow: hidden;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
-    position: relative;
-    z-index: 1;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 100vh;
+text-align: center;
+position: relative;
+z-index: 1;
 }
 
 header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 2;
-    text-align: center;
+position: fixed;
+top: 0;
+width: 100%;
+padding: 20px;
+background: rgba(0, 0, 0, 0.5);
+z-index: 2;
+text-align: center;
 }
 
 header nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
+list-style: none;
+padding: 0;
+margin: 0;
+display: flex;
+justify-content: center;
 }
 
 header nav ul li {
-    margin: 0 15px;
+margin: 0 15px;
 }
 
 header nav ul li a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 700;
-    transition: color 0.3s ease;
+color: #ffffff;
+text-decoration: none;
+font-weight: 700;
+transition: color 0.3s ease;
 }
 
-header nav ul li a:hover {
-    color: #5c67f2;
+header nav ul li a
+{
+color: #5c67f2;
 }
 
 h1 {
-    font-size: 3em;
-    margin: 0;
-    color: #5c67f2;
+font-size: 3em;
+margin: 0;
+color: #5c67f2;
 }
 
 p {
-    font-size: 1.2em;
-    margin: 20px 0;
+font-size: 1.2em;
+margin: 20px 0;
 }
 
 button, .connect-button {
-    background-color: #5c67f2;
-    color: #ffffff;
-    padding: 15px 30px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 1.2em;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    border: none;
-    cursor: pointer;
+background-color: #5c67f2;
+color: #ffffff;
+padding: 15px 30px;
+border-radius: 8px;
+text-decoration: none;
+font-size: 1.2em;
+transition: background-color 0.3s ease, transform 0.2s ease;
+border: none;
+cursor: pointer;
 }
 
-button:hover, .connect-button:hover {
-    background-color: #4e56d8;
-    transform: scale(1.05);
+button
+, .connect-button
+{
+background-color: #4e56d8;
+transform: scale(1.05);
 }
 
 .link {
-    color: #5c67f2;
-    cursor: pointer;
-    transition: color 0.3s ease, transform 0.2s ease;
+color: #5c67f2;
+cursor: pointer;
+transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.link:hover {
-    color: #4e56d8;
-    transform: scale(1.05);
+.link
+{
+color: #4e56d8;
+transform: scale(1.05);
 }
 
 /* Particles CSS */
 .particles {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    overflow: hidden;
+position: absolute;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+z-index: 0;
+overflow: hidden;
 }
 
 .news-item {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 10px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
+background-color: rgba(0, 0, 0, 0.5);
+padding: 20px;
+margin: 20px 0;
+border-radius: 10px;
+text-align: left;
 }
 
 .news-item h2 {
-    font-size: 2em;
-    margin: 0 0 10px 0;
-    color: #5c67f2;
+margin: 0 0 10px 0;
+color: #5c67f2;
 }
 
 .news-item p {
-    font-size: 1.2em;
-    color: #ffffff;
+margin: 10px 0;
 }
 
-.form-column {
-    display: flex;
+footer {
+position: fixed;
+bottom: 0;
+width: 100%;
+background: rgba(0, 0, 0, 0.5);
+padding: 20px;
+text-align: center;
+}
+
+.widget {
+background-color: rgba(0, 0, 0, 0.5);
+padding: 20px;
+margin: 20px 0;
+border-radius: 10px;
+text-align: center;
+max-width: 400px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.widget h2 {
+margin: 0 0 10px 0;
+color: #5c67f2;
+}
+
+.widget img {
+max-width: 100%;
+border-radius: 10px;
+}
+
+.widget p {
+margin: 10px 0;
+}
+
+.news-modal {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.8);
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 1000;
+}
+
+.news-content {
+background: white;
+padding: 20px;
+border-radius: 10px;
+max-width: 600px;
+width: 90%;
+text-align: center;
+}
+
+.news-content h2 {
+margin-top: 0;
+}
+
+.news-content button {
+margin-top: 20px;
+}
+
+#particles-canvas {
+filter: blur(5px);
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+.container {
+padding: 20px;
+}
+
+header nav ul {
     flex-direction: column;
     align-items: center;
 }
 
-.form-column input, .form-column button {
-    width: 100%;
-    max-width: 400px;
+header nav ul li {
     margin: 10px 0;
 }
 
-@media (max-width: 768px) {
-    .container {
-        padding: 20px;
-    }
-
-    header nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    header nav ul li {
-        margin: 10px 0;
-    }
-
-    main {
-        padding: 20px;
-    }
-
-    h1 {
-        font-size: 2.5em;
-    }
-
-    button, .connect-button {
-        padding: 10px 20px;
-        font-size: 1em;
-    }
-
-    .form-column input, .form-column button {
-        width: 90%;
-    }
+main {
+    padding: 20px;
 }
 
-body.modal-open {
-    overflow: hidden;
+h1 {
+    font-size: 2.5em;
 }
 
-.news-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+button, .connect-button {
+    padding: 10px 20px;
+    font-size: 1em;
 }
 
 .news-content {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 600px;
+    width: 95%;
+}
+
+.form-column input, .form-column button {
     width: 90%;
-    text-align: center;
 }
-
-.news-content h2 {
-    margin-top: 0;
-}
-
-.news-content button {
-    margin-top: 20px;
-}
-
-#particles-canvas {
-    filter: blur(5px);
-}
-
-.widget {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 10px;
-    text-align: center;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.widget h2 {
-    margin: 0 0 10px 0;
-    color: #5c67f2;
-}
-
-.widget img {
-    max-width: 100%;
-    border-radius: 10px;
-}
-
-.widget p {
-    margin: 10px 0;
 }
