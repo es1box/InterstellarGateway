@@ -46,6 +46,11 @@ header nav ul li a {
     color: #ffffff;
     text-decoration: none;
     font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #5c67f2;
 }
 
 h1 {
@@ -54,29 +59,37 @@ h1 {
     color: #5c67f2;
 }
 
-h2 {
-    font-size: 2em;
-    margin: 10px 0;
-    color: #f2f2f2;
-}
-
 p {
     font-size: 1.2em;
     margin: 20px 0;
 }
 
-.connect-button {
+button, .connect-button {
     background-color: #5c67f2;
     color: #ffffff;
     padding: 15px 30px;
     border-radius: 8px;
     text-decoration: none;
     font-size: 1.2em;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
 }
 
-.connect-button:hover {
+button:hover, .connect-button:hover {
     background-color: #4e56d8;
+    transform: scale(1.05);
+}
+
+.link {
+    color: #5c67f2;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.link:hover {
+    color: #4e56d8;
+    transform: scale(1.05);
 }
 
 /* Particles CSS */
