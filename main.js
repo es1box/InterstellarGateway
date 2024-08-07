@@ -21,16 +21,20 @@ const db = getFirestore();
 // Проверка аутентификации и перенаправление
 onAuthStateChanged(auth, async (user) => {
     const path = window.location.pathname;
-    
+
     if (user) {
-        // Если пользователь на странице входа или регистрации, перенаправить на страницу профиля
         if (path === "/auth.html" || path === "/register.html") {
-            window.location.href = "profile.html";
+            // Убедитесь, что перенаправление происходит только один раз
+            if (path !== "/profile.html") {
+                window.location.href = "profile.html";
+            }
         }
     } else {
-        // Если пользователь на странице новостей или профиля, перенаправить на страницу входа
         if (path === "/news.html" || path === "/profile.html") {
-            window.location.href = "auth.html";
+            // Убедитесь, что перенаправление происходит только один раз
+            if (path !== "/auth.html") {
+                window.location.href = "auth.html";
+            }
         }
     }
 });
