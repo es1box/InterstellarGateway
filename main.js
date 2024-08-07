@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, createUserWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 import { getFirestore, setDoc, doc, serverTimestamp, getDoc } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
 // Firebase configuration
@@ -23,18 +23,14 @@ onAuthStateChanged(auth, async (user) => {
     const path = window.location.pathname;
 
     if (user) {
+        // Если пользователь на странице входа или регистрации, перенаправить на страницу профиля
         if (path === "/auth.html" || path === "/register.html") {
-            // Убедитесь, что перенаправление происходит только один раз
-            if (path !== "/profile.html") {
-                window.location.href = "profile.html";
-            }
+            window.location.href = "profile.html";
         }
     } else {
+        // Если пользователь на странице новостей или профиля, перенаправить на страницу входа
         if (path === "/news.html" || path === "/profile.html") {
-            // Убедитесь, что перенаправление происходит только один раз
-            if (path !== "/auth.html") {
-                window.location.href = "auth.html";
-            }
+            window.location.href = "auth.html";
         }
     }
 });
@@ -91,6 +87,43 @@ if (registerLink) {
     });
 }
 
+// Логика формы регистрации
+const registerForm = document.getElementById("registerForm");
+if (registerForm) {
+    registerForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const nickname = document.getElementById("registerNickname").value;
+        const email = document.getElementById("registerEmail").value;
+        const password = document.getElementById("registerPassword").value;
+
+        try {
+            await createUserWithEmailAndPassword(auth, email, password);
+            const user = auth.currentUser;
+            const userDoc = doc(db, "users", user.uid);
+            await setDoc(userDoc, {
+                nickname: nickname,
+                email: email,
+                age: null,
+                isAdmin: false,
+                createdAt: serverTimestamp()
+            });
+
+            window.location.href = "profile.html";
+        } catch (error) {
+            console.error("Ошибка при регистрации:", error);
+            alert("Ошибка при регистрации: " + error.message);
+        }
+    });
+}
+
+// Логика ссылки на вход
+const loginLink = document.getElementById("loginLink");
+if (loginLink) {
+    loginLink.addEventListener("click", () => {
+        window.location.href = "auth.html";
+    });
+}
+
 // Загрузка новостей
 const newsList = document.getElementById("news-list");
 if (newsList) {
@@ -109,9 +142,45 @@ if (newsList) {
             `;
             newsList.appendChild(newsItem);
         } else {
-            console.log("No such document!");
+            console.log("Документ не найден!");
         }
     };
 
     loadNews();
 }
+
+// Всплывающее окно для новостей
+const newsModal = document.getElementById("news-modal");
+const closeModalBtn = document.getElementById("close-modal");
+
+if (closeModalBtn) {
+    closeModalBtn.addEventListener("click", () => {
+        newsModal.style.display = "none";
+    });
+}
+
+// Функция генерации пароля
+function generatePassword(length = 12) {
+    const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+";
+    let password = "";
+    for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * charset.length);
+        password += charset[randomIndex];
+    }
+    return password;
+}
+
+// Обновление полей для регистрации и входа
+const showPasswordToggle = (toggleId, passwordId) => {
+    const toggle = document.getElementById(toggleId);
+    const passwordField = document.getElementById(passwordId);
+    
+    if (toggle) {
+        toggle.addEventListener("click", () => {
+            passwordField.type = passwordField.type === "password" ? "text" : "password";
+        });
+    }
+};
+
+showPasswordToggle("showLoginPassword", "loginPassword");
+showPasswordToggle("showRegisterPassword", "registerPassword");
