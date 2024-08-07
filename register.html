@@ -1,46 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
+    <title>Регистрация</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="news.html">Новости</a></li>
+                <li><a href="profile.html">Профиль</a></li>
+                <li><a href="auth.html">Вход</a></li>
+                <li><a href="register.html">Регистрация</a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="container">
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="news.html">News</a></li>
-                    <li><a href="profile.html">Profile</a></li>
-                    <li><a href="auth.html">Login</a></li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-            <h1>Registration</h1>
-            <form id="registrationForm" class="form-column">
-                <input type="text" id="nickname" placeholder="Игровой ник" required>
-                <input type="email" id="registerEmail" placeholder="Email" required>
-                <div class="password-field">
-                    <input type="password" id="registerPassword" placeholder="Пароль" required>
-                    <button type="button" id="togglePassword">👁️</button>
-                </div>
-                <button type="submit">Register</button>
-                <p>Already have an account? <a id="loginLink" class="link">Login here</a></p>
-            </form>
-        </main>
-        <footer>
-            <div class="widget">
-                <h2>@IG|Galactic Conflic</h2>
-                <p>All rights reserved</p>
-                <div id="online-widget">
-                    <a href="http://www.myarena.ru/game-monitoring.html?game=88653"><img src="//img.myarena.ru/88653/560.png" alt="Online Status"></a>
-                </div>
-            </div>
-        </footer>
-        <script src="scripts.js"></script>
+        <h1>Регистрация</h1>
+        <form id="registerForm" class="form-column">
+            <input type="text" id="registerNickname" placeholder="Игровой ник" required>
+            <input type="email" id="registerEmail" placeholder="Электронная почта" required>
+            <input type="password" id="registerPassword" placeholder="Пароль" required>
+            <button type="submit">Зарегистрироваться</button>
+            <p>Уже есть аккаунт? <a id="loginLink" href="#">Войти</a></p>
+        </form>
     </div>
+    <footer>
+        <div class="widget">
+            <h2>Текущий онлайн:</h2>
+            <a href="http://www.myarena.ru/game-monitoring.html?game=88653"><img src="//img.myarena.ru/88653/560.png" alt="Текущий онлайн"></a>
+        </div>
+        <p>@IG|Galactic Conflic Все права защищены</p>
+    </footer>
+    <script src="scripts.js"></script>
 </body>
 </html>
