@@ -7,22 +7,29 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="news.html">Новости</a></li>
-                <li><a href="auth.html">Вход/Регистрация</a></li>
-                <li><a href="profile.html">Профиль</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h1>Профиль</h1>
-        <p id="user-info"></p>
-        <button id="logout">Выйти</button>
-    </main>
+    <div class="particles">
+        <canvas id="particles-canvas"></canvas>
+    </div>
+    <div class="container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="auth.html">Вход/Регистрация</a></li>
+                    <li><a href="profile.html">Профиль</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1>Профиль</h1>
+            <div id="user-info">
+                <!-- Информация о пользователе будет загружаться динамически -->
+            </div>
+            <button id="logout">Выйти</button>
+        </main>
+    </div>
     <script type="module" src="main.js"></script>
+    <script type="module" src="particles.js"></script>
 </body>
 </html>
-
