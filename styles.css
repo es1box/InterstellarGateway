@@ -1,4 +1,3 @@
-/* styles.css */
 body, html {
     margin: 0;
     padding: 0;
@@ -102,24 +101,41 @@ button:hover, .connect-button:hover {
     z-index: 0;
     overflow: hidden;
 }
+
 .news-item {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     margin: 20px 0;
     border-radius: 10px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
     text-align: left;
 }
 
 .news-item h2 {
+    font-size: 2em;
     margin: 0 0 10px 0;
     color: #5c67f2;
 }
 
 .news-item p {
+    font-size: 1.2em;
+    color: #ffffff;
+}
+
+.form-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-column input, .form-column button {
+    width: 100%;
+    max-width: 400px;
     margin: 10px 0;
 }
 
-/* Адаптивные стили */
 @media (max-width: 768px) {
     .container {
         padding: 20px;
@@ -146,24 +162,12 @@ button:hover, .connect-button:hover {
         padding: 10px 20px;
         font-size: 1em;
     }
-}
-.form-column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
-.form-column input, .form-column button {
-    width: 100%;
-    max-width: 400px;
-    margin: 10px 0;
-}
-
-@media (max-width: 768px) {
     .form-column input, .form-column button {
         width: 90%;
     }
 }
+
 body.modal-open {
     overflow: hidden;
 }
@@ -202,12 +206,6 @@ body.modal-open {
     filter: blur(5px);
 }
 
-/* Адаптивные стили */
-@media (max-width: 768px) {
-    .news-content {
-        width: 95%;
-    }
-}
 .widget {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
@@ -228,27 +226,7 @@ body.modal-open {
     max-width: 100%;
     border-radius: 10px;
 }
+
 .widget p {
     margin: 10px 0;
-}
-.news-item {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 10px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
-}
-
-.news-item h2 {
-    font-size: 2em;
-    margin: 0 0 10px 0;
-    color: #5c67f2;
-}
-
-.news-item p {
-    font-size: 1.2em;
-    color: #ffffff;
 }
