@@ -3,33 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Профиль пользователя</title>
+    <title>Профиль</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="particles">
-        <canvas id="particles-canvas"></canvas>
-    </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="news.html">Новости</a></li>
+                <li><a href="profile.html">Профиль</a></li>
+                <li><a href="auth.html">Вход</a></li>
+                <li><a href="register.html">Регистрация</a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="container">
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Главная</a></li>
-                    <li><a href="news.html">Новости</a></li>
-                    <li><a href="auth.html">Вход/Регистрация</a></li>
-                    <li><a href="profile.html">Профиль</a></li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-            <h1>Профиль</h1>
-            <div id="user-info">
-                <!-- Информация о пользователе будет загружаться динамически -->
-            </div>
-            <button id="logout">Выйти</button>
-        </main>
+        <h1>Ваш профиль</h1>
+        <p>Здесь будет информация о вашем профиле.</p>
     </div>
-    <script type="module" src="main.js"></script>
-    <script type="module" src="particles.js"></script>
+    <footer>
+        <div class="widget">
+            <h2>Текущий онлайн:</h2>
+            <a href="http://www.myarena.ru/game-monitoring.html?game=88653"><img src="//img.myarena.ru/88653/560.png" alt="Текущий онлайн"></a>
+        </div>
+        <p>@IG|Galactic Conflic Все права защищены</p>
+    </footer>
+    <script src="scripts.js"></script>
 </body>
 </html>
