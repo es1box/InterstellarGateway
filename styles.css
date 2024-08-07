@@ -1,339 +1,217 @@
-body, html {
+/* Основные стили для всего сайта */
+body {
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    height: 100%;
-    font-family: 'Roboto', sans-serif;
-    background-color: #1a1a1a;
-    color: #ffffff;
-    overflow: hidden;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
-    position: relative;
-    z-index: 1;
+a {
+    text-decoration: none;
+    color: #1a73e8;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
+/* Хедер */
 header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 2;
-    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 24px;
+    margin-left: 20px;
 }
 
 header nav ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
-    justify-content: center;
+    margin: 0;
+    padding: 0;
 }
 
 header nav ul li {
-    margin: 0 15px;
+    margin-right: 20px;
 }
 
 header nav ul li a {
-    color: #ffffff;
+    color: white;
     text-decoration: none;
-    font-weight: 700;
-    transition: color 0.3s ease;
+    font-size: 18px;
 }
 
 header nav ul li a:hover {
-    color: #5c67f2;
+    text-decoration: underline;
 }
 
-h1 {
-    font-size: 3em;
-    margin: 0;
-    color: #5c67f2;
+/* Главная страница */
+.banner {
+    background: url('//img.myarena.ru/88653/560.png') no-repeat center center;
+    background-size: cover;
+    height: 300px;
+    position: relative;
 }
 
-p {
-    font-size: 1.2em;
-    margin: 20px 0;
+.banner img {
+    width: 100%;
+    height: auto;
 }
 
-button, .connect-button {
-    background-color: #5c67f2;
-    color: #ffffff;
-    padding: 15px 30px;
+.connect-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.connect-btn:hover {
+    background-color: #e43f00;
+}
+
+.servers {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px;
     border-radius: 8px;
-    text-decoration: none;
-    font-size: 1.2em;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.server {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.server h3 {
+    margin: 0;
+}
+
+/* Страница новостей */
+.news-container {
+    padding: 20px;
+}
+
+.news-item {
+    padding: 15px;
+    background-color: #fff;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.news-item h2 {
+    margin-top: 0;
+}
+
+.news-item p {
+    margin: 10px 0;
+}
+
+/* Страница профиля */
+.profile-container {
+    padding: 20px;
+}
+
+.profile-form {
+    max-width: 600px;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.profile-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.profile-form input[type="submit"] {
+    background-color: #1a73e8;
+    color: white;
     border: none;
     cursor: pointer;
 }
 
-button:hover, .connect-button:hover {
-    background-color: #4e56d8;
-    transform: scale(1.05);
+.profile-form input[type="submit"]:hover {
+    background-color: #1558d6;
 }
 
-.link {
-    color: #5c67f2;
-    cursor: pointer;
-    transition: color 0.3s ease, transform 0.2s ease;
-}
-
-.link:hover {
-    color: #4e56d8;
-    transform: scale(1.05);
-}
-
-/* Particles CSS */
-.particles {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    overflow: hidden;
-}
-
-.news-item {
-    background-color: rgba(0, 0, 0, 0.5);
+/* Страницы регистрации и входа */
+.auth-container {
     padding: 20px;
-    margin: 20px 0;
-    border-radius: 10px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
 }
 
-.news-item h2 {
-    font-size: 2em;
-    margin: 0 0 10px 0;
-    color: #5c67f2;
-}
-
-.news-item p {
-    font-size: 1.2em;
-    color: #ffffff;
-}
-
-/* Адаптивные стили */
-@media (max-width: 768px) {
-    .container {
-        padding: 20px;
-    }
-
-    header nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    header nav ul li {
-        margin: 10px 0;
-    }
-
-    main {
-        padding: 20px;
-    }
-
-    h1 {
-        font-size: 2.5em;
-    }
-
-    button, .connect-button {
-        padding: 10px 20px;
-        font-size: 1em;
-    }
-}
-
-.form-column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.form-column input, .form-column button {
-    width: 100%;
+.auth-form {
     max-width: 400px;
-    margin: 10px 0;
-}
-
-@media (max-width: 768px) {
-    .form-column input, .form-column button {
-        width: 90%;
-    }
-}
-
-body.modal-open {
-    overflow: hidden;
-}
-
-.news-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.news-content {
-    background: white;
+    margin: auto;
+    background-color: #fff;
     padding: 20px;
-    border-radius: 10px;
-    max-width: 600px;
-    width: 90%;
-    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.news-content h2 {
-    margin-top: 0;
+.auth-form label {
+    display: block;
+    margin-bottom: 5px;
 }
 
-.news-content button {
-    margin-top: 20px;
-}
-
-#particles-canvas {
-    filter: blur(5px);
-}
-
-/* Адаптивные стили */
-@media (max-width: 768px) {
-    .news-content {
-        width: 95%;
-    }
-}
-
-.widget {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 10px;
-    text-align: center;
-    max-width: 360px; /* Изменено на размер маленького изображения */
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.widget h2 {
-    margin: 0 0 10px 0;
-    color: #5c67f2;
-}
-
-.widget img {
-    max-width: 100%;
-    border-radius: 10px;
-}
-
-.widget p {
-    margin: 10px 0;
-}
-
-.footer {
-    position: fixed;
-    bottom: 0;
+.auth-form input {
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #ffffff;
-    text-align: center;
     padding: 10px;
-    z-index: 2;
-    font-size: 0.9em;
-}
-/* Стили для навигационного меню */
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 15px;
+.auth-form input[type="submit"] {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: #ffffff;
-    padding: 5px;
-    transition: background-color 0.3s, color 0.3s;
+.auth-form input[type="submit"]:hover {
+    background-color: #1558d6;
 }
 
-nav ul li a:hover {
-    background-color: #e6b333;
-    color: #000000;
-}
-
-/* Стили для футера */
+/* Подвал */
 footer {
     background-color: #333;
-    color: #fff;
+    color: white;
     text-align: center;
     padding: 10px;
     position: fixed;
     bottom: 0;
     width: 100%;
+    font-size: 14px;
 }
 
-/* Стили для страницы политики конфиденциальности */
-h2, h3 {
-    color: #e6b333;
-}
-/* Адаптивный дизайн */
-@media (max-width: 768px) {
-    .header-content {
-        text-align: center;
-    }
-
-    .header-content nav ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .header-content nav ul li {
-        margin: 5px 0;
-    }
-
-    .banner img {
-        width: 100%;
-        height: auto;
-    }
-}
-.banner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    padding: 20px;
+footer a {
+    color: #1a73e8;
 }
 
-.banner img {
-    max-width: 100%;
-    border-radius: 10px;
-}
-
-.connect-button {
-    margin-top: 20px;
-}
-
-.content {
-    text-align: center;
-    padding: 20px;
-}
-
-.content h2, .content h3, .content p {
-    margin: 10px 0;
+footer a:hover {
+    text-decoration: underline;
 }
