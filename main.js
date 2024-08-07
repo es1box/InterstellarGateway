@@ -165,3 +165,19 @@ async function openNews(event) {
         document.body.classList.remove("modal-open");
     });
 }
+// Online Widget
+async function updateOnlineCount() {
+    const onlineCountElement = document.getElementById("online-count");
+    if (onlineCountElement) {
+        try {
+            const response = await fetch("https://api.example.com/server/online"); // Пример запроса к API
+            const data = await response.json();
+            onlineCountElement.textContent = `${data.online} игроков онлайн`;
+        } catch (error) {
+            onlineCountElement.textContent = "Ошибка загрузки данных";
+        }
+    }
+}
+
+updateOnlineCount();
+setInterval(updateOnlineCount, 60000); // Обновление каждые 60 секунд
