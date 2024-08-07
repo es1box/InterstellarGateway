@@ -3,39 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InterstellarGateway - Главная</title>
+    <title>Interstellar Gateway</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="particles">
-        <canvas id="particles-canvas"></canvas>
-    </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="news.html">Новости</a></li>
+                <li><a href="profile.html">Профиль</a></li>
+                <li><a href="auth.html">Вход</a></li>
+                <li><a href="register.html">Регистрация</a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="container">
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Главная</a></li>
-                    <li><a href="news.html">Новости</a></li>
-                    <li><a href="auth.html">Вход/Регистрация</a></li>
-                    <li><a href="profile.html">Профиль</a></li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-            <h1>Добро пожаловать на сервер GMod</h1>
-            <h2>Interstellar Gateway</h2>
-            <p>Здесь начинается ваше космическое приключение!</p>
-            <a href="steam://connect/46.174.50.56:27015" class="connect-button">Подключиться</a>
-            
-            <!-- Widget с текущим онлайном на сервере -->
-            <div id="online-widget" class="widget">
-                <a href="http://www.myarena.ru/game-monitoring.html?game=88653">
-                    <img src="//img.myarena.ru/88653/560.png" alt="Текущий онлайн на сервере">
-                </a>
-            </div>
-        </main>
+        <h1>Добро пожаловать в Interstellar Gateway</h1>
+        <p>Ваш портал в мир галактических конфликтов.</p>
     </div>
-    <script type="module" src="particles.js"></script>
+    <footer>
+        <div class="widget">
+            <h2>Текущий онлайн:</h2>
+            <a href="http://www.myarena.ru/game-monitoring.html?game=88653"><img src="//img.myarena.ru/88653/560.png" alt="Текущий онлайн"></a>
+        </div>
+        <p>@IG|Galactic Conflic Все права защищены</p>
+    </footer>
+    <script src="scripts.js"></script>
 </body>
 </html>
