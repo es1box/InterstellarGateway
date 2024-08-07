@@ -291,3 +291,24 @@ footer {
 h2, h3 {
     color: #e6b333;
 }
+/* Адаптивный дизайн */
+@media (max-width: 768px) {
+    .header-content {
+        text-align: center;
+    }
+
+    .header-content nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-content nav ul li {
+        margin: 5px 0;
+    }
+
+    .banner img {
+        width: 100%;
+        height: auto;
+    }
+}
