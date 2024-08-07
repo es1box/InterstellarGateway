@@ -19,8 +19,44 @@
     </header>
     <main>
         <h1>Новости</h1>
-        <div id="news-list"></div>
+        <div id="news-list">
+            <div class="news-item">
+                <h2>Пример заголовка новости</h2>
+                <p>Это пример содержания новости. Здесь будет отображаться содержание загруженных новостей.</p>
+                <button onclick="openNewsModal()">Читать больше</button>
+            </div>
+        </div>
+        <div class="widget">
+            <h2>Онлайн сервер</h2>
+            <a href="http://www.myarena.ru/game-monitoring.html?game=88653">
+                <img src="//img.myarena.ru/88653/560.png" alt="Текущий онлайн на сервере">
+            </a>
+            <p>Посмотреть текущее состояние сервера.</p>
+        </div>
     </main>
+
+    <!-- Модальное окно для новостей -->
+    <div class="news-modal" id="newsModal" style="display: none;">
+        <div class="news-content">
+            <h2>Пример заголовка новости</h2>
+            <p>Это пример подробного содержания новости. Здесь будет отображаться более полное содержание новости.</p>
+            <button onclick="closeNewsModal()">Закрыть</button>
+        </div>
+    </div>
+
     <script type="module" src="main.js"></script>
+    <script>
+        function openNewsModal() {
+            document.body.classList.add('modal-open');
+            document.getElementById('newsModal').style.display = 'flex';
+            document.getElementById('particles-canvas').style.filter = 'blur(5px)';
+        }
+
+        function closeNewsModal() {
+            document.body.classList.remove('modal-open');
+            document.getElementById('newsModal').style.display = 'none';
+            document.getElementById('particles-canvas').style.filter = 'none';
+        }
+    </script>
 </body>
 </html>
